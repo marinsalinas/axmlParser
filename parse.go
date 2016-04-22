@@ -60,10 +60,10 @@ func ParseAxml(axmlpath string, listener Listener) (*Parser, error) {
 	return parser, nil
 }
 
-func ParseAPK(f io.Reader, listener Listener) (*Parser, error) {
+func ParseAPK(apkFile io.Reader, listener Listener) (*Parser, error) {
 	buf := new(bytes.Buffer)
 
-	fileSize, err := io.Copy(buf, f)
+	fileSize, err := io.Copy(buf, apkFile)
 	if err != nil {
 		panic(err)
 	}
